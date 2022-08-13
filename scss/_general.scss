@@ -1,0 +1,43 @@
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+} 
+
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Barlow';
+  font-size: 16px;
+  line-height: 1.6;
+  background: #FEFCF7;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto; 
+  padding: 0 15px;
+}
+
+@media screen and (max-width: $tablet) {
+  .container{
+    max-width: 1240px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .container{
+    max-width: 688px;
+    padding-top: 32px;
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,140 @@
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.site-header__list{
+  display: flex;
+  gap: 33px;
+  text-decoration: none;
+}
+
+.site-header__items{
+  list-style: none;  
+  
+}
+
+.site-header__items-link{
+  @include link;
+  color: #83888F;
+  font-weight: 700;
+  
+  &:hover{
+    color: #333D4B;
+  }
+}
+
+.site-header__burger{
+  display: none;
+}
+
+@media only screen and (max-width: $tablet) {
+  .site-header__logo{
+    width: 235px;
+  }
+  
+  .site-header__items{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .site-header{
+    margin-bottom: 50px;
+    padding: 30px 0;
+    position: relative;
+  }
+  
+  
+  .site-header__burger{
+    cursor: pointer;
+    display: block;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    padding: 30px 0;
+    position: relative;
+    min-height: 15px;
+    width: 30px;
+    
+  }
+  
+  .site-header__burger-inner,
+  .site-header__burger::before,
+  .site-header__burger::after{
+    display: block;
+    width: 16px;
+    height: 3px;
+    background-color: #333D4B;
+    border-radius: 1.5px;
+    transition: 0.2s ease all;
+    
+    content: '';
+  }
+  
+  .site-header__burger-inner{
+    margin: 3px 0;
+  }
+  
+  .site-header__nav--opened .site-header__burger-inner{
+    display: none;
+    
+  }
+  
+  .site-header__burger--opened::before,
+  .site-header__burger--opened::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  
+  .site-header__burger--opened::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  
+  .site-header__burger--opened::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  
+  .site-header__list{
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  
+  @keyframes nav-open {
+    0% {
+      transform: translateY(-100%);
+    }
+    
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .site-header__nav{
+    display: none;
+  }
+  
+  .site-header--opened {
+    background-color: #FEFCF7;
+  }
+  
+  .site-header--opened .site-header__nav {
+    display: block;
+    animation: 1s linear nav-open;
+  }
+  
+  .site-header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 87px);
+    background-color: #fff;
+    
+    background: linear-gradient(180deg, #FEFCF7 55.94%, rgba(254, 252, 247, 0.504981) 100%,);
+  } 
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="site-header container">
+      <a href="#">
+        <img
+        class="site-header__logo"
+        src="./img/coffeeroaster-logo.svg"
+        alt="coffeeroaster logo"
+        />
+      </a>
+      <button class="site-header__burger">
+        <span class="site-header__burger-inner"></span>
+        <span class="visually-hidden">Menu toggler button</span>
+      </button>
+      <nav class="nav site-header__nav site-header__nav--opened">
+        <ul class="site-header__list">
+          <li class="site-header__items">
+            <a class="site-header__items-link" href="index.html"> HOME </a>
+          </li>
+          <li class="site-header__items">
+            <a class="site-header__items-link" href="#"> ABOUT US </a>
+          </li>
+          <li class="site-header__items">
+            <a class="site-header__items-link" href="#"> CREATE YOUR PLAN </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <section class="intro container">
+      <div class="intro__wrapper">
+        <p class="intro__title">Great coffee made simple.</p>
+        <p class="intro__description">
+          Start your mornings with the world’s best coffees. Try our expertly
+          curated artisan coffees from our best roasters delivered directly to
+          your door, at your schedule.
+        </p>
+
+        <a class="intro__plan-link" href="#">Create your plan</a>
+      </div>
+    </section>
+    <script>
+      const elToggler = document.querySelector(".site-header__burger");
+      const elHeader = document.querySelector(".site-header");
+
+      elToggler.addEventListener("click", function () {
+        elHeader.classList.toggle("site-header--opened");
+        elToggler.classList.toggle("site-header__burger--opened");
+      });
+    </script>
+  </body>
+</html>
